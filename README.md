@@ -1,7 +1,3 @@
-
-
-https://github.com/user-attachments/assets/e3c71920-8e57-4cf2-be1e-f17b87a0f001
-
 # FPGA Fruit Catch
 A fruit-catching game built in VHDL for FPGA hardware. The design generates VGA graphics in real time and implements gameplay entirely in hardware, including player movement, collision detection, score tracking, lives management, game states, and pseudo-random fruit spawning.
 
