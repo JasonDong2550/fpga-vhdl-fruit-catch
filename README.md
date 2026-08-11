@@ -61,6 +61,4 @@ A fruit-catching game built in VHDL for FPGA hardware. The design generates VGA 
 - FPGA-Based Game Development
 
 ## Hardware Demonstration
-
-
 *Insert gameplay screenshot or video here.*
