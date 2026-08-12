@@ -549,9 +549,6 @@ architecture rtl of vga_fruit_catch is
 	--used for the vga being on or not
 	signal video_on : std_logic;
 	
-	--reset switch edge detection
-	signal sw0_prev : std_logic := '0';
-	
 	--makes it so key2 stays high when it is clicked until key1 is clicked
 	signal key1_prev : std_logic := '1';
 	signal key2_prev : std_logic := '1';
@@ -1395,23 +1392,6 @@ begin
 	game_proc : process(fpga_clk_50)
 	begin
 		if(rising_edge(fpga_clk_50)) then
-			--reset switch edge detection
-			if(sw(0) /= sw0_prev) then
-				game_state <= game_start;
-				
-				basket_x <= 285;
-				basket_y <= 390;
-				
-				fruit_x <= (100, 220, 340, 460, 580);
-				fruit_y <= (-40, -80, -120, -160, -200);
-				fruit_kind <= (0, 1, 2, 0, 1);
-				
-				lives <= 4;
-				score <= 0;
-			end if;
-			
-			sw0_prev <= sw(0);
-			
 			--updates pseudo-random generator
 			if(game_tick = '1') then
 				lfsr <= lfsr(14 downto 0) & (lfsr(15) xor lfsr(13) xor lfsr(12) xor lfsr(10));
